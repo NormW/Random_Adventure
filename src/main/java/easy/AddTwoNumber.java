@@ -109,23 +109,27 @@ public class AddTwoNumber {
     }
 
     public static void main(String[] args) {
-        AddTwoNumber opr = new AddTwoNumber();
-        ListNode l1 = opr.generateList(new int[]{1, 2, 3});
-        ListNode l2 = opr.generateList(new int[]{4, 5, 6});
-
-        ListNode ans = opr.addTwoNumbers(l1, l2);
-        SimpleLinkedList.print(ans);
-        System.out.println("");
-
-        ListNode l3 = opr.generateList(new int[]{5, 1});
-        ListNode l4 = opr.generateList(new int[]{5, 2});
-        ListNode ans2 = opr.addTwoNumbers(l3, l4);
-        SimpleLinkedList.print(ans2);
-        System.out.println("");
-
-        ListNode l5 = opr.generateList(new int[]{2, 4, 3});
-        ListNode l6 = opr.generateList(new int[]{5, 6, 4});
-        ListNode ans3 = opr.addTwoNumbers(l5, l6);
-        SimpleLinkedList.print(ans3);
+//        AddTwoNumber opr = new AddTwoNumber();
+//        ListNode l1 = opr.generateList(new int[]{1, 2, 3});
+//        ListNode l2 = opr.generateList(new int[]{4, 5, 6});
+//
+//        ListNode ans = opr.addTwoNumbers(l1, l2);
+//        SimpleLinkedList.print(ans);
+//        System.out.println("");
+//
+//        ListNode l3 = opr.generateList(new int[]{5, 1});
+//        ListNode l4 = opr.generateList(new int[]{5, 2});
+//        ListNode ans2 = opr.addTwoNumbers(l3, l4);
+//
+//        SimpleLinkedList.print(ans2);
+//        ListNode l5 = opr.generateList(new int[]{2, 4, 3});
+//        ListNode l6 = opr.generateList(new int[]{5, 6, 4});
+//        ListNode ans3 = opr.addTwoNumbers(l5, l6);
+//        SimpleLinkedList.print(ans3);
+        ListNode node = new ListNode(0);
+        ListNode tmp = node;
+        node.val = 111;
+        node.next = tmp;
+        SimpleLinkedList.print(node);
     }
 }
