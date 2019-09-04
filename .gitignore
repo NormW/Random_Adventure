@@ -11,6 +11,8 @@ reated by https://www.gitignore.io/api/java,gradle,intellij
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/*.xml
+.idea/*.iml
 
 # Generated files
 .idea/**/contentModel.xml
