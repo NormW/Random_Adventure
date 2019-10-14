@@ -1,7 +1,7 @@
 package easy;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Given a string, find the length of the longest substring without repeating characters.
@@ -25,37 +25,81 @@ import java.util.Set;
  */
 public class LongestNoRepeatedSubstring {
 
-    //To use int[26] or int[52] if string is English Letter only
     public int lengthOfLongestSubstring(String s) {
         Set<Character> occurred = new HashSet<>();
-        char[] stingArray = s.toCharArray();
+        char[] stringArray = s.toCharArray();
         int longest = 0;
-        int localLongest = 0;
-        for (char c : stingArray) {
-            if (occurred.contains(c)) {
-                longest = Math.max(localLongest, longest);
-                occurred.clear();
-                occurred.add(c);
-                localLongest = 1;
-            } else {
-                occurred.add(c);
-                localLongest += 1;
+        for (int index = 0; index < stringArray.length; index++) {
+            for (int i = index; i < stringArray.length; i++) {
+                char data = stringArray[i];
+                if (occurred.contains(data)) {
+                    longest = Math.max(longest, occurred.size());
+                    occurred.clear();
+                    break;
+                } else {
+                    occurred.add(data);
+                }
             }
+        }
+
+        return Math.max(longest, occurred.size());
+    }
+
+    public int longestSubstring(String s) {
+        int longest = 0;
+        int i = 0;
+        int j = 0;
+        Set<Character> occurred = new HashSet<>();
+        char[] values = s.toCharArray();
+        int length = values.length;
+        while (j < length && i < length) {
+            if (occurred.contains(values[j])) {
+                longest = Math.max(longest, occurred.size());
+                occurred.remove(values[i++]);
+            } else {
+                occurred.add(values[j++]);
+            }
+        }
+
+        return Math.max(longest, occurred.size());
+    }
+
+    public int findLongestSubstring(String s) {
+        char[] values = s.toCharArray();
+        int i = -1;
+        int length = values.length;
+        int longest = 0;
+        Map<Character, Integer> valueMap = new HashMap<>();
+
+        for (int j = 0; j < length; j++) {
+            Character value = values[j];
+            if (valueMap.containsKey(value)) {
+                i = Math.max(valueMap.get(value), i);
+            }
+            longest = Math.max(longest, j - i);
+            valueMap.put(value, j);
         }
         return longest;
     }
 
     public static void main(String[] args) {
         String str1 = "abcabcbb";
-        String str2 = "bbbb";
+        String str2 = "aab";
         String str3 = "pwwkew";
 
         LongestNoRepeatedSubstring opr = new LongestNoRepeatedSubstring();
-        int l1 = opr.lengthOfLongestSubstring(str1);
-        int l2 = opr.lengthOfLongestSubstring(str2);
-        int l3 = opr.lengthOfLongestSubstring(str3);
+        int l1 = opr.findLongestSubstring(str1);
+        int l2 = opr.findLongestSubstring(str2);
+        int l3 = opr.findLongestSubstring(str3);
 
         String ans = String.format("%d, %d, %d", l1, l2, l3);
         System.out.println(ans);
+
+        int l11 = opr.longestSubstring(str1);
+        int l12 = opr.longestSubstring(str2);
+        int l13 = opr.longestSubstring(str3);
+
+        String ans2 = String.format("%d, %d, %d", l11, l12, l13);
+        System.out.println(ans2);
     }
 }
