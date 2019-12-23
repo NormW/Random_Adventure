@@ -1,7 +1,6 @@
-package easy;
+package leetcode.easy;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Given a string, find the length of the longest substring without repeating characters.

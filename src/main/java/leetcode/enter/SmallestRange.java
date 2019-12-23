@@ -1,4 +1,4 @@
-package enter;
+package leetcode.enter;
 
 /**
  * Given an array A of integers, for each integer A[i] we may choose any x with -K <= x <= K, and add x to A[i].

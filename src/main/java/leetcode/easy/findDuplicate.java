@@ -1,4 +1,4 @@
-package easy;
+package leetcode.easy;
 
 /**
  * Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive),

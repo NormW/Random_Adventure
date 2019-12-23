@@ -1,10 +1,8 @@
-package enter;
+package leetcode.enter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Given an array of distinct integers arr,

@@ -1,4 +1,4 @@
-package enter;
+package leetcode.enter;
 
 /**
  * You are a product manager and currently leading a team to develop a new product.

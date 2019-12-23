@@ -1,6 +1,4 @@
-package easy;
-
-import java.util.List;
+package leetcode.easy;
 
 /**
  * You are given two non-empty linked lists representing two non-negative integers.

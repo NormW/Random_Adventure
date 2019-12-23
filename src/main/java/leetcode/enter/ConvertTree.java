@@ -1,4 +1,4 @@
-package enter;
+package leetcode.enter;
 
 /**
  * Given a Binary Search Tree (BST).

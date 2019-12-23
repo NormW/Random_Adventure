@@ -1,4 +1,4 @@
-package enter;
+package leetcode.enter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
