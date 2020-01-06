@@ -1,12 +1,9 @@
 package huawei.test;
 
 import java.math.BigInteger;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
-    //1048576B = 1.00MB
-
     public static void main(String[] args) {
         Main operator = new Main();
         String output = operator.reduceSpaces("/a/../../b//c/..////././asdas.c");
@@ -17,6 +14,7 @@ public class Main {
         System.out.println(operator.printPath(output2));
         System.out.println(operator.printPath(output3));
         System.out.println(operator.printPath(output4));
+
         BigInteger one = new BigInteger("122333");
         BigInteger two = new BigInteger("123123124");
         System.out.println(one.add(two).toString());
@@ -35,7 +33,7 @@ public class Main {
                 lastBackSlash = false;
             }
         }
-
+        List<String> asd= new LinkedList<>();
         return builder.toString();
     }
 

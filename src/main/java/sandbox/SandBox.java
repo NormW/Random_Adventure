@@ -12,5 +12,8 @@ public class SandBox {
         System.out.println(gender.filter(s -> s.equals("male")));
 
         gender.ifPresent(g -> System.out.println("In gender Option, value available." + g));
+
+        String one = "abc";
+        System.out.println(one.substring(4));
     }
 }
